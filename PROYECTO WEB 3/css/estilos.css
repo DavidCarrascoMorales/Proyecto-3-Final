@@ -1,0 +1,124 @@
+/**------------Inicio Bases html----------------- **/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #E9ECF4;
+	color: #000;
+	font-family: 'Roboto', sans-serif;
+}
+
+/**------------ Fin bases html----------------- **/
+
+
+/**-----------Inicio GRID------------------------------- **/
+
+.contenedor {
+	width: 90%;
+	max-width: 62.5rem;
+	margin: 2px auto;
+	display: grid;
+	grid-gap: 2rem;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(4, auto);
+
+	grid-template-areas: "header header header"
+						 "contenido contenido sidebar"
+						 "footer footer footer";
+}
+
+/** ----------Fin GRID--------------------------------- **/
+
+/**------ Inicio contenedores ------**/
+
+img{
+	width: 22rem;
+	height: 47.625rem;
+	object-fit: cover;
+}
+h2{
+	font-size: 7.25rem;
+	text-align: center;
+}
+h3{
+	font-size: 0.85rem;
+}
+
+.contenedor > div,.contenedor .header,.contenedor 
+.contenido,.contenedor .sidebar,.contenedor .footer {
+	
+	background: #fff;
+	padding: 1.25rem;
+	border-radius: 0.25rem;
+}
+
+.contenedor .header {
+	background: #fddb16;
+	color: #fff;
+	grid-area: header;
+}
+
+.contenedor .contenido {
+	grid-area: contenido;
+}
+
+.contenedor .sidebar {
+	grid-column: 3 / 4;
+	background: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 6.25rem;
+	
+}
+
+.contenedor .footer {
+	background: #fddb16;
+	color: #fff;
+	grid-area: footer;
+}
+
+@media screen and (max-width: 48rem){ /**  CONTENEDOR RESPONSIVE **/
+	.contenedor {
+		grid-template-areas: "header header header"
+						 "contenido contenido contenido"
+						 "sidebar sidebar sidebar"
+						 "footer footer footer";
+	}
+}
+/**------ Fin contenedores ------**/
+
+
+/**------ Iinicio navegacion ------**/
+.navegacion-principal {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+@media screen and (min-width: 768px) { /**  Barr de navegación RESPONSIVE **/
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.navegacion-principal a {
+    color: white;
+    display: block;
+    
+    text-align: center;
+
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+/**------ fin navegacion ------**/
+
+
+
